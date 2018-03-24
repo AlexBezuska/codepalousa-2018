@@ -13,7 +13,7 @@ public class Player : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		var moveX = moveSpeed * Input.GetAxis("Horizontal") * Time.deltaTime;
+		var moveX = moveSpeed * Time.deltaTime;
 		var moveY = 0f;
 		var moveZ = 0f;
 		transform.Translate(moveX, moveY, moveZ);

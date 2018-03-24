@@ -38,8 +38,8 @@ GameObject:
   - component: {fileID: 65017416611906068}
   - component: {fileID: 23424234232502944}
   m_Layer: 0
-  m_Name: Platform Dirt
-  m_TagString: Untagged
+  m_Name: Platform Grass
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -56,7 +56,7 @@ GameObject:
   - component: {fileID: 65422522360122910}
   - component: {fileID: 23890615403023478}
   m_Layer: 0
-  m_Name: Platform Grass
+  m_Name: Platform Dirt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -95,7 +95,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1142595026334312}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 14.8, y: 0, z: 0}
   m_LocalScale: {x: 10, y: 1, z: 10}
   m_Children:
   - {fileID: 4403645713665968}
