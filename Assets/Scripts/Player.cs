@@ -15,7 +15,7 @@ public class Player : MonoBehaviour {
 	void Update () {
 		var moveX = moveSpeed * Input.GetAxis("Horizontal") * Time.deltaTime;
 		var moveY = 0f;
-		var moveZ = moveSpeed * Input.GetAxis("Vertical") * Time.deltaTime;
+		var moveZ = 0f;
 		transform.Translate(moveX, moveY, moveZ);
 	}
 }
