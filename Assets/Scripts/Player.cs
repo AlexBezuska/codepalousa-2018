@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 
+	[Range(1,100)]
 	public float moveSpeed = 10f;
 
 	// Use this for initialization

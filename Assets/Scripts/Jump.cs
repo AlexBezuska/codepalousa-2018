@@ -29,8 +29,7 @@ public class Jump : MonoBehaviour {
 	void Update () {
 
 		if (Input.GetButton ("Jump") && grounded) {
-			grounded = false;
-			rb.velocity = Vector3.up * jumpVelocity;
+			JumpNow ();
 		}
 
 
@@ -39,5 +38,10 @@ public class Jump : MonoBehaviour {
 		} else if (rb.velocity.y > 0 && !Input.GetButton ("Jump")) {
 			rb.velocity += Vector3.up * Physics.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
 		}
+	}
+
+	public void JumpNow () {
+		grounded = false;
+		rb.velocity = Vector3.up * jumpVelocity;
 	}
 }
