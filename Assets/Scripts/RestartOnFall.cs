@@ -7,7 +7,6 @@ public class RestartOnFall : MonoBehaviour {
 	public float waitTime = 5.0f;
 
 	void OnCollisionEnter(Collision other) {
-		
 		if (other.gameObject.tag == "Restart"){
 			StartCoroutine (RestartLevel ());
 		}

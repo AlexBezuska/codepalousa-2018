@@ -226,6 +226,7 @@ GameObject:
   - component: {fileID: 33299039520867742}
   - component: {fileID: 23675888614919872}
   - component: {fileID: 65047824406720664}
+  - component: {fileID: 114895232894162384}
   m_Layer: 0
   m_Name: Platform Fantasy 2 1
   m_TagString: Ground
@@ -1041,3 +1042,14 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114895232894162384
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1911681128644140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e03f2076d8ebc473689f7221143443ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

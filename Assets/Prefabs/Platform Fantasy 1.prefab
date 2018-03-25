@@ -141,6 +141,7 @@ GameObject:
   - component: {fileID: 33190671640297612}
   - component: {fileID: 23306503025046076}
   - component: {fileID: 65130445189066488}
+  - component: {fileID: 114497898887863056}
   m_Layer: 0
   m_Name: Platform Fantasy 1
   m_TagString: Ground
@@ -1330,3 +1331,14 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114497898887863056
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1294830827681886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e03f2076d8ebc473689f7221143443ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

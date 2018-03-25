@@ -12,6 +12,7 @@ public class Jump : MonoBehaviour {
 	Rigidbody rb;
 	public bool grounded = true;
 
+
 	// Code run when gameobject this script is on is created
 	void Awake () {
 		rb = GetComponent<Rigidbody> ();
@@ -28,20 +29,19 @@ public class Jump : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (Input.GetButton ("Jump") && grounded) {
-			JumpNow ();
+		var jumpButtonPushed = Input.GetButton ("Jump") || Input.GetMouseButton(0) || Input.touchCount > 0;
+
+		if (jumpButtonPushed && grounded) {
+			grounded = false;
+			rb.velocity = Vector3.up * jumpVelocity;
 		}
 
 
 		if (rb.velocity.y < 0) {
 			rb.velocity += Vector3.up * Physics.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
-		} else if (rb.velocity.y > 0 && !Input.GetButton ("Jump")) {
+		} else if (rb.velocity.y > 0 && !jumpButtonPushed) {
 			rb.velocity += Vector3.up * Physics.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
 		}
 	}
-
-	public void JumpNow () {
-		grounded = false;
-		rb.velocity = Vector3.up * jumpVelocity;
-	}
+		
 }
