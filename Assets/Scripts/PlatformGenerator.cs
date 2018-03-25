@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class PlatformGenerator : MonoBehaviour {
 
-	public GameObject thePlatform;
+	public GameObject[] platforms;
 	public Transform generationPoint;
 
 	public float heightVariance;
-
 
 	public float distanceBetweenMin;
 	public float distanceBetweenMax;
@@ -16,18 +15,16 @@ public class PlatformGenerator : MonoBehaviour {
 	private float platformWidth;
 
 
-	void Start () {
-		platformWidth = thePlatform.GetComponent<BoxCollider> ().size.x;
-	}
-
-
 	void Update () {
+		var index = Random.Range (0, platforms.Length);
+		var platformPick = platforms[index];
+	
 		var distanceBetween = Random.Range (distanceBetweenMin, distanceBetweenMax);
 		var yPosition = Random.Range (transform.position.y - heightVariance, transform.position.y  + heightVariance);
 		if (transform.position.x < generationPoint.position.x) {
-			transform.position = new Vector3 (transform.position.x + platformWidth + distanceBetween, yPosition);
+			transform.position = new Vector3 (transform.position.x + 10 + distanceBetween, yPosition);
 
-			Instantiate (thePlatform, transform.position, transform.rotation);
+			Instantiate (platformPick, transform.position, transform.rotation);
 		}
 	}
 }
