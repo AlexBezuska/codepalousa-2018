@@ -18,7 +18,7 @@ public class PlatformGenerator : MonoBehaviour {
 	void Update () {
 		var index = Random.Range (0, platforms.Length);
 		var platformPick = platforms[index];
-	
+
 		var distanceBetween = Random.Range (distanceBetweenMin, distanceBetweenMax);
 		var yPosition = Random.Range (transform.position.y - heightVariance, transform.position.y  + heightVariance);
 		if (transform.position.x < generationPoint.position.x) {

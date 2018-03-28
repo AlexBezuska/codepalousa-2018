@@ -4,16 +4,11 @@ using UnityEngine;
 
 public class RestartOnFall : MonoBehaviour {
 
-	public float waitTime = 5.0f;
+	public float resetZone = -50;
 
-	void OnCollisionEnter(Collision other) {
-		if (other.gameObject.tag == "Restart"){
-			StartCoroutine (RestartLevel ());
+	void Update(){
+		if (transform.position.y < resetZone) {
+			Application.LoadLevel(Application.loadedLevel);
 		}
-	}
-
-	IEnumerator RestartLevel( ){
-		yield return new WaitForSeconds(waitTime);
-		Application.LoadLevel(Application.loadedLevel);
 	}
 }

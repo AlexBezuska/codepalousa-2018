@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Jump : MonoBehaviour {
 
-
+	public AudioClip[] jumpSounds;
 	public float jumpVelocity;
 
 	public float fallMultiplier = 2.5f;
@@ -13,20 +13,11 @@ public class Jump : MonoBehaviour {
 	public bool grounded = true;
 
 
-	// Code run when gameobject this script is on is created
-	void Awake () {
+
+	void Start () {
 		rb = GetComponent<Rigidbody> ();
 	}
-
-
-	void OnCollisionEnter(Collision other) {
-		if (other.gameObject.tag == "Ground"){
-			grounded = true;
-		}
-	}
-
-
-	// Update is called once per frame
+		
 	void Update () {
 
 		var jumpButtonPushed = Input.GetButton ("Jump") || Input.GetMouseButton(0) || Input.touchCount > 0;
@@ -34,6 +25,7 @@ public class Jump : MonoBehaviour {
 		if (jumpButtonPushed && grounded) {
 			grounded = false;
 			rb.velocity = Vector3.up * jumpVelocity;
+			SoundManager.Instance.Play (jumpSounds);
 		}
 
 
@@ -41,6 +33,12 @@ public class Jump : MonoBehaviour {
 			rb.velocity += Vector3.up * Physics.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
 		} else if (rb.velocity.y > 0 && !jumpButtonPushed) {
 			rb.velocity += Vector3.up * Physics.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
+		}
+	}
+
+	void OnCollisionEnter(Collision other) {
+		if (other.gameObject.tag == "Ground"){
+			grounded = true;
 		}
 	}
 		
